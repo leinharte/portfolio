@@ -70,15 +70,22 @@ body {
   margin: 0;
   cursor: default;
 }
-
 a {
   text-decoration: none;
   color: var(--color-white);
 }
-
 ul {
   list-style: none;
   padding-left: 0;
+}
+li {
+  list-style: none;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 /* Navbar */
@@ -108,4 +115,30 @@ ul {
 }
 .navbar__menu__item:hover {
   background-color: var(--color-dark-pink);
+}
+
+/* Home */
+#home {
+  background: url("imgs/homebackground.png") center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+.home__avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid var(--color-black);
+}
+.home__title,
+.home__descripton {
+  color: var(--color-white);
+}
+.home__contact {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-white);
+  border-radius: var(--size-border-radius);
+  color: var(--color-white);
 }
