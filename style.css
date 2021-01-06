@@ -105,6 +105,9 @@ button {
   padding: 16px;
   /* 스코롤시 넷바의 변화가 너무 급작스럽기 때문에 다음 추가 */
   transition: all var(--animation-duration) ease-in-out;
+  /* 스크롤 하면 프로젝트가 넷바위로 오는 현상이 있는데,
+     넷바는 항상 위에 있게 */
+  z-index: 1;
 }
 #navbar.navbar--dark {
   background-color: var(--color-pink);
@@ -391,7 +394,7 @@ button {
 }
 
 /* Testimonial */
-#testmonials {
+#testimonials {
   background-color: var(--color-light-white);
 }
 .testimonials {
