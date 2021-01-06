@@ -53,13 +53,34 @@ const navbarMenu = document.querySelector('.navbar__menu');
     if (link==null) {
       return;
     }
-    console.log(event.target.dataset.link); 
+//     console.log(event.target.dataset.link); 
 
-// 우리가 가고자 하는 섹션의 ID를 가져오는 것 까지 됐음.
-// 이제 scrollIntoView를 이용해서 그곳으로 이동..
-const scrollTo = document.querySelector(link);
-// 스므스하게 움직이기 위해 옵션에 { behavior: "smooth"} 추가
-scrollTo.scrollIntoView({behavior: "smooth"});
-
+// // 우리가 가고자 하는 섹션의 ID를 가져오는 것 까지 됐음.
+// // 이제 scrollIntoView를 이용해서 그곳으로 이동..
+// const scrollTo = document.querySelector(link);
+// // 스므스하게 움직이기 위해 옵션에 { behavior: "smooth"} 추가
+// scrollTo.scrollIntoView({behavior: "smooth"});
+  scrollIntoViewOurs(link);
 
 });
+
+
+/////////////////////////////////////////////
+//  3. Contact me 버튼을 클릭 했을 때, 스크롤 핸들링
+/////////////////////////////////////////////
+
+// (1) querySelector를 사용해서 홈컨택 버튼을 받아온다
+// (2) 받아온 버튼에 addEventListener를 사용해서 이벤트를 추가한다.
+const homeContactBtn = document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click', () => {
+  scrollIntoViewOurs('#contact');
+});
+
+// 중복되는 부분을 함수로 만들어서 사용한다
+function scrollIntoViewOurs(selector) {  // 우리가 정의한 함수
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({behavior: "smooth"});  // DOM 요소의 함수
+}
+// 하나는 우리가 정의해준, 즉, 글로벌 스코프에 정의된 함수가 아니라, 
+// DOM 요소 오브젝트에 정의된 함수 이기 때문에, 무한푸프는 걱정하지 않으셔도 되요.
+// 동일한 이름이지만 전혀 다른 세계에 있는 함수이기 때문에 이름이 같아도 괜찮아요
