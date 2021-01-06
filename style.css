@@ -93,12 +93,21 @@ button {
 
 /* Navbar */
 #navbar {
+  /* 스크롤시에도 고정 */
+  position: fixed;
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-pink);
+  background-color: transparent;
   align-items: center;
   color: var(--color-white);
   padding: 16px;
+  /* 스코롤시 넷바의 변화가 너무 급작스럽기 때문에 다음 추가 */
+  transition: all var(--animation-duration) ease-in-out;
+}
+#navbar.navbar--dark {
+  background-color: var(--color-pink);
 }
 .navbar__logo {
   font-size: var(--font-medium);
@@ -138,6 +147,7 @@ button {
 #home {
   background: url("imgs/homebackground.png") center/cover no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 .home__avatar {
