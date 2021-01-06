@@ -120,6 +120,20 @@ button {
   background-color: var(--color-dark-pink);
 }
 
+/* 미디어쿼리 토글 버튼을 위한 코딩 */
+.navbar__tootle-btn {
+  /* 기존자리에서 빠져나와 포지셔닝 */
+  position: absolute;
+  /* 오른쪽에서 32px 떨어지게 */
+  right: 32px;
+  top: 24px;
+  font-size: 24px;
+  color: var(--color-white);
+  /* 평소에는 안보이게 
+     opacity는 마우스를 올리면 클릭이 된다*/
+  display: none;
+}
+
 /* Home */
 #home {
   background: url("imgs/homebackground.png") center/cover no-repeat;
@@ -427,4 +441,47 @@ button {
 /* 애니메이션 넣기 */
 .contact__links i {
   transition: all var(--animation-duration) ease-in;
+}
+
+@media screen and (max-width: 786px) {
+  .navbar__tootle-btn {
+    /* 토글버튼 보여주기 */
+    display: block;
+  }
+
+  #navbar {
+    /* 넷바를 세로로 늘어뜨리기 */
+    flex-direction: column;
+    /* 넷바의 아이템들을 왼쪽으로 정렬하가 */
+    align-items: flex-start;
+  }
+  .navbar__menu {
+    /* 넷바를 세로로 늘어뜨리기 */
+    flex-direction: column;
+    /* 메뉴의 아이템들을 가운데로 정렬하기 
+       메뉴의 크기도 크게*/
+    text-align: center;
+    width: 100%;
+    /* 토글버튼을 누르기 전까지는 메뉴아이템들이 안보이게 */
+    display: none;
+  }
+  /* about_majors 도 ... */
+  .about__majors {
+    /* majors의 아이템들을 세로로 늘어뜨리기 */
+    flex-direction: column;
+  }
+  .major {
+    margin-bottom: 30px:
+  }
+  .skillset {
+    flex-direction: column;
+  }
+  .project {
+    /* 화면에 맞게 커지게 */
+    flex-grow: 1;
+  }
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
