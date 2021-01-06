@@ -365,3 +365,40 @@ button {
   margin-top: 8px;
   background-color: var(--color-dark-white);
 }
+
+/* Testimonial */
+#testmonials {
+  background-color: var(--color-light-white);
+}
+.testimonials {
+  margin: 40px;
+}
+.testimonial {
+  display: flex;
+  margin: 32px;
+}
+.testimonial__avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+/* 홀수 일때는 마진을 오른쪽에만 주고 */
+.testimonial__avatar:nth-child(odd) {
+  margin-right: 40px;
+}
+/* 짝수 일때는 마진을 왼쪽에만 주고 */
+.testimonial__avatar:nth-child(even) {
+  margin-left: 40px;
+}
+
+.testmonial__speech-bubble {
+  padding: 18px;
+  background-color: var(--color-white);
+  border-radius: var(--size-border-radius);
+}
+.testmonial__speech-bubble p {
+  color: var(--color-light-grey);
+}
+.testmonial__speech-bubble a {
+  color: var(--color-pink);
+}
