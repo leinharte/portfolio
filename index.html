@@ -197,16 +197,25 @@
   <h1>My work</h1>
   <h3>Projects</h3>
   <div class="work__categories">
-    <button class="category__btn active">All<span class="category__count">8</span></button>
-    <button class="category__btn">Front_end<span class="category__count">9</span></button>
-    <button class="category__btn">Back-end<span class="category__count">4</span></button>
-    <button class="category__btn">Mobile<span class="category__count">3</span></button>
+    <button class="category__btn active" data-filter="*">
+      All<span class="category__count">8</span>
+    </button>
+    <button class="category__btn" data-filter="front-end">
+      Front_end<span class="category__count">9</span>
+    </button>
+    <button class="category__btn" data-filter="back-end">
+      Back-end<span class="category__count">4</span>
+    </button>
+    <button class="category__btn" data-filter="mobile">
+      Mobile<span class="category__count">3</span>
+    </button>
   </div>
   <div class="work__projects">
     <a 
       href="www.google.com" 
       class="project"
       target="_blank"
+      data-type="front-end"
       >
       <img class="project__img" src="imgs/projects/cat1.jpeg" alt="1번 고양이">
       <div class="project__description">
@@ -218,6 +227,7 @@
       href="www.google.com" 
       class="project"
       target="_blank"
+      data-type="back-end"
       >
       <img class="project__img" src="imgs/projects/cat2.jpeg" alt="2번 고양이">
       <div class="project__description">
@@ -229,6 +239,7 @@
       href="www.google.com" 
       class="project"
       target="_blank"
+      data-type="mobile"
       >
       <img class="project__img" src="imgs/projects/cat3.jpeg" alt="3번 고양이">
       <div class="project__description">
@@ -240,6 +251,7 @@
       href="www.google.com" 
       class="project"
       target="_blank"
+      data-type="front-end"
       >
       <img class="project__img" src="imgs/projects/cat4.jpeg" alt="4번 고양이">
       <div class="project__description">
@@ -251,6 +263,7 @@
       href="www.google.com" 
       class="project"
       target="_blank"
+      data-type="back-end"
       >
       <img class="project__img" src="imgs/projects/cat5.jpeg" alt="5번 고양이">
       <div class="project__description">
@@ -262,6 +275,7 @@
       href="www.google.com" 
       class="project"
       target="_blank"
+      data-type="mobile"
       >
       <img class="project__img" src="imgs/projects/cat6.jpeg" alt="6번 고양이">
       <div class="project__description">
@@ -273,6 +287,7 @@
       href="www.google.com" 
       class="project"
       target="_blank"
+      data-type="front-end"
       >
       <img class="project__img" src="imgs/projects/cat7.jpeg" alt="7번 고양이">
       <div class="project__description">
@@ -284,6 +299,7 @@
       href="www.google.com" 
       class="project"
       target="_blank"
+      data-type="back-end"
       >
       <img class="project__img" src="imgs/projects/cat8.png" alt="8번 고양이">
       <div class="project__description">

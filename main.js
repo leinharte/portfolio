@@ -118,6 +118,54 @@ arrowUp.addEventListener('click', () => {
 });
 
 /////////////////////////////////////////////
+//  6. 프로젝트 필터링
+/////////////////////////////////////////////
+// (6-1.1) 카테고리 박스 가져오기
+const workBtnContainer = document.querySelector('.work__categories');
+// (6-1.2) 프로젝트 박스 가져오기
+const projectContainer = document.querySelector('.work__projects');
+// (6-1.3) querySelectorAll을 사용해서 프로젝트 박스 안에 있는 각각의 프로젝트들을 배열로 받아오기
+const projects = document.querySelectorAll('.project');
+// (6-2) 버튼 클릭하는 것 받아오기
+// 워크버튼컨테이너를 클릭하면 함수 실행
+workBtnContainer.addEventListener('click', (e) => {
+  // 필더되는 것들 보기
+  // 이벤트 e를 받아 와서 이벤트 안에 있는 데이터셋 안에 있는 필터 값들 받아오기
+  // const filter = e.target.dataset.filter;
+  // 되는지 출력 해보기 -> 원안에 있는 숫자를 클릭하면 undifined 됨.
+  // 원안의 숫자는 span이기 때문, span안에는 data-filter가 없다.
+  // 필터가 없으면, 혹시 모르니깐 parent 노드에 필터가 있는지 받아와서 출력을 한다.
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+
+  // (6-3.1) 필터가 null이면 아무것도 하지 않고,
+  if(filter == null) {
+    return;
+  }
+  // (6-3.2) 프로젝트들을 안보이게 만든다
+  // 그래서 프로젝트 어레이의 아이템을 forEach 하나당 각각 번갈아 가면서 해준다
+  projects.forEach((project) => {
+    // project마다 돌면서 프로젝트 안에 데이타셋 안에 데이타타입을 넣은 것
+    console.log(project.dataset.type);
+
+    if(filter === '*' || filter === project.dataset.type) {
+      project.classList.remove('invisible');
+    } else {
+      project.classList.add('invisible');
+    }
+  })
+  
+  // 참고로 forEach는 다음 두 개와 같다
+  // for(let project of projects) {
+  // }
+  // let project;
+  // for(let i = 0; i<projects.length :i++) {
+  //   project = projects[i]
+  // }
+
+  console.log(filter);
+})
+
+/////////////////////////////////////////////
 //  ※ 함수 맨 밑에 위치
 /////////////////////////////////////////////
 // 중복되는 부분을 함수로 만들어서 사용한다

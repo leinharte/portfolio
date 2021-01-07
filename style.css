@@ -347,6 +347,9 @@ button {
   margin: 2px;
   background-color: var(--color-light-white);
 }
+.project.invisible {
+  display: none;
+}
 .project__img {
   /* 이미지는 자기가 속해 있는 통안에서만 커저야 한다 */
   max-width: 100%;
