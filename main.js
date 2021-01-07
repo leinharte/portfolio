@@ -76,6 +76,34 @@ homeContactBtn.addEventListener('click', () => {
   scrollIntoViewOurs('#contact');
 });
 
+/////////////////////////////////////////////
+//  4. 아래로 스크롤 할 때, 홈화면 점점 투명하게
+/////////////////////////////////////////////
+
+// (1) 홈의 height를 받아온다
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+// (2) 다큐먼트에 이벤트를 등록한다
+// (2-1) 스크롤링이 되면 함수를 호출해 줘
+document.addEventListener('scroll', () => {
+  // 홈의 높이를 받아 왔는지 확인
+  console.log(`homeHeight: ${homeHeight}`);
+  console.log(1 - window.scrollY/homeHeight);
+// (2-2) 홈의 투명도 조정
+// 단, 홈의 배경까지 투명해지고 있어 , html에 가서 홈의 내용을 home_container라는 박스를 만들어서
+// 그 안에 넣어준다
+  home.style.opacity = 1 - window.scrollY/homeHeight;
+})
+
+
+
+
+
+
+
+/////////////////////////////////////////////
+//  ※ 함수 맨 밑에 위치
+/////////////////////////////////////////////
 // 중복되는 부분을 함수로 만들어서 사용한다
 function scrollIntoViewOurs(selector) {  // 우리가 정의한 함수
   const scrollTo = document.querySelector(selector);
