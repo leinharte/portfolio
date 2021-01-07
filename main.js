@@ -95,11 +95,27 @@ document.addEventListener('scroll', () => {
   home.style.opacity = 1 - window.scrollY/homeHeight;
 })
 
-
-
-
-
-
+/////////////////////////////////////////////
+//  5. 스크롤이 되면 화살표 버튼이 보이게 한다
+/////////////////////////////////////////////
+// (5-1) querySelector를 사용해서 html에 있는 화살표 가져오기
+const arrowUp = document.querySelector('.arrow-up');
+// (5-2 다큐먼트에 이벤트리스너를 추가해서 스크롤이 될 때 함수 호출
+document.addEventListener('scroll', () => {
+  // 단, 홈에서 반정도 내려오면 아이콘이 생기게 한다.
+  // 위 4에서 받아온 homeHeight를 계속 사용한다.
+  if(window.scrollY > homeHeight/2) {
+    // (5-3) html에 visible을 클래스에 추가한다
+    arrowUp.classList.add('visible');
+  } else {
+    // (5-4) html에 visible을 클래스에서 지운다
+    arrowUp.classList.remove('visible');
+  }
+  });
+// (5-5) 클릭하면 맨위로 가기
+arrowUp.addEventListener('click', () => {
+  scrollIntoViewOurs('#home');
+});
 
 /////////////////////////////////////////////
 //  ※ 함수 맨 밑에 위치
