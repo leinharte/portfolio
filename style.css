@@ -136,7 +136,7 @@ button {
 }
 
 /* 미디어쿼리 토글 버튼을 위한 코딩 */
-.navbar__tootle-btn {
+.navbar__toggle-btn {
   /* 기존자리에서 빠져나와 포지셔닝 */
   position: absolute;
   /* 오른쪽에서 32px 떨어지게 */
@@ -391,7 +391,7 @@ button {
   transform: translateX(0px);
 }
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 /* 두개의 디스크림션 중간에 선 넣기 */
 .project__description h3:after {
@@ -399,9 +399,9 @@ button {
   display: block;
   position: relative;
   left: 50%;
-  width: 25px;
+  width: 50px;
   height: 2px;
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 8px;
   background-color: var(--color-dark-white);
 }
@@ -498,7 +498,7 @@ button {
 }
 
 @media screen and (max-width: 786px) {
-  .navbar__tootle-btn {
+  .navbar__toggle-btn {
     /* 토글버튼 보여주기 */
     display: block;
   }
@@ -508,6 +508,10 @@ button {
     flex-direction: column;
     /* 넷바의 아이템들을 왼쪽으로 정렬하가 */
     align-items: flex-start;
+    background-color: var(--color-pink);
+  }
+  .navbar.navbar--dark {
+    padding: 16px;
   }
   .navbar__menu {
     /* 넷바를 세로로 늘어뜨리기 */
@@ -518,6 +522,9 @@ button {
     width: 100%;
     /* 토글버튼을 누르기 전까지는 메뉴아이템들이 안보이게 */
     display: none;
+  }
+  .navbar__menu.open {
+    display: block;
   }
   /* about_majors 도 ... */
   .about__majors {

@@ -20,6 +20,9 @@ document.addEventListener('scroll',() => {
     navbar.classList.remove('navbar--dark');
   }
 });
+
+
+
 /////////////////////////////////////////////
 //  2. 메뉴 아이템을 클릭 했을 때, 스크롤 핸들링
 /////////////////////////////////////////////
@@ -60,9 +63,19 @@ const navbarMenu = document.querySelector('.navbar__menu');
 // const scrollTo = document.querySelector(link);
 // // 스므스하게 움직이기 위해 옵션에 { behavior: "smooth"} 추가
 // scrollTo.scrollIntoView({behavior: "smooth"});
+navbarMenu.classList.remove('open');
   scrollIntoViewOurs(link);
 
 });
+
+/////////////////////////////////////////////
+//  7. 햄버거 클릭(토글)했을 때 메뉴리스트 보이게(for small screen)
+/////////////////////////////////////////////
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+  // toggle을 하면 클래스에 open이 생겼다 없어졌다 한다.
+  navbarMenu.classList.toggle('open');
+})
 
 
 /////////////////////////////////////////////
