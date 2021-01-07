@@ -142,8 +142,14 @@ workBtnContainer.addEventListener('click', (e) => {
     return;
   }
   // (6-3.2) 프로젝트들을 안보이게 만든다
+  // 프로젝트를 모두 안보이게 하려면, 우선 선택버튼이 되면 프로젝컨테이너 자체에 클래스를 추가한다
+  projectContainer.classList.add('anim-out');
+
   // 그래서 프로젝트 어레이의 아이템을 forEach 하나당 각각 번갈아 가면서 해준다
-  projects.forEach((project) => {
+
+    // 0.3초가 지나면 클래스의 anim-out을 없애준다
+    setTimeout(() => {
+        projects.forEach((project) => {
     // project마다 돌면서 프로젝트 안에 데이타셋 안에 데이타타입을 넣은 것
     console.log(project.dataset.type);
 
@@ -152,7 +158,10 @@ workBtnContainer.addEventListener('click', (e) => {
     } else {
       project.classList.add('invisible');
     }
-  })
+    });
+      projectContainer.classList.remove('anim-out');
+    }, 300);
+  });
   
   // 참고로 forEach는 다음 두 개와 같다
   // for(let project of projects) {
@@ -163,7 +172,7 @@ workBtnContainer.addEventListener('click', (e) => {
   // }
 
   console.log(filter);
-})
+
 
 /////////////////////////////////////////////
 //  ※ 함수 맨 밑에 위치
