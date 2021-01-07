@@ -143,13 +143,22 @@ workBtnContainer.addEventListener('click', (e) => {
   }
   // (6-3.2) 프로젝트들을 안보이게 만든다
   // 프로젝트를 모두 안보이게 하려면, 우선 선택버튼이 되면 프로젝컨테이너 자체에 클래스를 추가한다
+  
+  // 이전 거에서 선택을 없애고 새로 클릭된 것에 선택을 추가한다.
+  // 현재 클릭된 버튼으로 active 옮기기
+  const active = document.querySelector('.category__btn.selected');
+  // 기존에 등록된 selected를 제고하고
+  active.classList.remove('selected');
+  // 새로 선택된 것에 selected 추가한다.
+  // (주의) 숫자 span을 클릭하는 경우에 span에 selectedk 추가되지 않게 해야 한다.
+  const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+  target.classList.add('selected');
+
   projectContainer.classList.add('anim-out');
-
   // 그래서 프로젝트 어레이의 아이템을 forEach 하나당 각각 번갈아 가면서 해준다
-
     // 0.3초가 지나면 클래스의 anim-out을 없애준다
-    setTimeout(() => {
-        projects.forEach((project) => {
+  setTimeout(() => {
+    projects.forEach((project) => {
     // project마다 돌면서 프로젝트 안에 데이타셋 안에 데이타타입을 넣은 것
     console.log(project.dataset.type);
 
